@@ -1,9 +1,5 @@
+import { Link } from "react-router-dom";
 import "./Post.css";
-const Link = ({children}) =>{
-    return(
-        <a>{children}</a>
-    )
-}
 export default function Post({img}) {
   return (
     <div className="post">

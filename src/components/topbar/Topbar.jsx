@@ -1,10 +1,5 @@
-
+import { Link } from "react-router-dom";
 import "./Topbar.css";
-const Link = ({children}) =>{
-    return(
-        <a>{children}</a>
-    )
-}
 export default function Topbar() {
   const user = true;
   return (

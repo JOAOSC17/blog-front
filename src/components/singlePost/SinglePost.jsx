@@ -1,10 +1,5 @@
+import { Link } from "react-router-dom";
 import "./SinglePost.css";
-
-const Link = ({children}) =>{
-    return(
-        <a>{children}</a>
-    )
-}
 export default function SinglePost() {
   return (
     <div className="singlePost">
