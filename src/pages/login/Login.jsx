@@ -20,8 +20,6 @@ export default function Login() {
       dispatch({type:"LOGIN_FAILURE"})
     }
   }
-  console.log(user)
-  console.log(isFetching)
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
@@ -30,7 +28,7 @@ export default function Login() {
         <input className="loginInput" ref={userRef} type="text" placeholder="Enter your username..." />
         <label>Password</label>
         <input className="loginInput" ref={passwordRef} type="password" placeholder="Enter your password..." />
-        <button className="loginButton" type="submit">Login</button>
+        <button className="loginButton" type="submit" disabled={isFetching}>Login</button>
       </form>
         <Link to="/register" className="loginRegisterButton">Register</Link>
     </div>
