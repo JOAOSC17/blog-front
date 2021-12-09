@@ -39,7 +39,6 @@ export default function SinglePost() {
       window.location.reload()
     } catch (err) {}
   }
-  console.log(post.username === user.username)
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
