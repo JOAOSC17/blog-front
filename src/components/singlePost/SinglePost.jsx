@@ -4,7 +4,7 @@ import { Context } from '../../context/Context'
 import { Link, useLocation } from "react-router-dom";
 import "./SinglePost.css";
 export default function SinglePost() {
-  const PF = 'http://localhost:5000/images/'
+  const PF = 'https://blog-example-backend.herokuapp.com/images/'
   const location = useLocation()
   const path = location.pathname.split('/')[2]
   const { user } = useContext(Context)
@@ -14,7 +14,7 @@ export default function SinglePost() {
   const [post, setPost] = useState([])
   useEffect(() => {
     const getPost = async () => {
-      const { data } = await axios.get('http://localhost:5000/api/posts/' + path)
+      const { data } = await axios.get('https://blog-example-backend.herokuapp.com/api/posts/' + path)
       setPost(data)
       setTitle(data.title)
       setDesc(data.desc)
@@ -23,7 +23,7 @@ export default function SinglePost() {
   }, [path])
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${post._id}`, {
+      await axios.delete(`https://blog-example-backend.herokuapp.com/api/posts/${post._id}`, {
         data:{ username:user.username },
       })
       window.location.replace("/")
@@ -31,7 +31,7 @@ export default function SinglePost() {
   }
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/posts/${post._id}`, {
+      await axios.put(`https://blog-example-backend.herokuapp.com/api/posts/${post._id}`, {
           username:user.username,
           title,
           desc 

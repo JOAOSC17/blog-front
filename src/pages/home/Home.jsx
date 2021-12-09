@@ -11,7 +11,7 @@ export default function Home() {
     const {search} = useLocation()
     useEffect(()=> {
     const fetchPosts = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/posts" + search)
+    const { data } = await axios.get("https://blog-example-backend.herokuapp.com/api/posts" + search)
     setPosts(data)
     }
     fetchPosts()

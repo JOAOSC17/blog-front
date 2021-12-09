@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./Topbar.css";
 export default function Topbar() {
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://blog-example-backend.herokuapp.com/images/"
   const { user, dispatch } = useContext(Context)
   const handleLogout = () => {
     dispatch({type:"LOGOUT"})
