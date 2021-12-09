@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./SinglePost.css";
 export default function SinglePost() {
+  const PF = 'http://localhost:5000/images/'
   const location = useLocation()
   const path = location.pathname.split('/')[2]
   const [post, setPost] = useState([])
@@ -13,13 +14,14 @@ export default function SinglePost() {
   }
     getPost()
   }, [path])
+  console.log(post.photo)
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
         <img
           className="singlePostImg"
-          src={post.photo}
+          src={PF + post.photo}
           alt=""
         />)}
         <h1 className="singlePostTitle">
